@@ -1,0 +1,52 @@
+{
+  "name": "callum-voice-web",
+  "version": "0.0.1",
+  "description": "Real-time voice chat SDK for web browsers — AudioWorklet-based mic capture and peer playback mixing",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist/",
+    "src/"
+  ],
+  "scripts": {
+    "build": "tsc && tsc -p tsconfig.esm.json && node build-esm.js",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run clean && npm run build"
+  },
+  "keywords": [
+    "voice-chat",
+    "voice",
+    "realtime",
+    "audio",
+    "websocket",
+    "audioworklet",
+    "webrtc",
+    "cloudfort",
+    "callum"
+  ],
+  "author": "Cloudfort",
+  "license": "MIT",
+  "homepage": "https://cloudfort.ir",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cloudfort/callum-voice-web.git"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "browser": {
+    "fs": false,
+    "path": false
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
